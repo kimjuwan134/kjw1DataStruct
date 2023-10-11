@@ -11,21 +11,12 @@ using namespace std;
 
 #pragma endregion
 
-struct Node
+void Remove(Node * target)
 {
-	int data;
-	Node * next;
-};
-
-void PushFront(Node * target, int data)
-{
-	Node * newNode = new Node;
-	newNode->data = data;
-	newNode->next = target->next;
-	target->next = newNode;
+	Node * deleteNode = target->next;
+	target->next = deleteNode->next;
+	delete deleteNode;
 }
-
-
 
 int main()
 {
@@ -36,6 +27,7 @@ int main()
 	PushFront(head, 20);
 	PushFront(head, 30);
 
+	Remove(head);
 
 	Node * currentPtr = head->next;
 
@@ -47,7 +39,6 @@ int main()
 
 
 
-	delete head;
 
 
 
