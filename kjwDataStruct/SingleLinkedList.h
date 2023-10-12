@@ -3,13 +3,14 @@
 
 using namespace std;
 
+template <typename T>
 
 class SingleLinkedList
 {
 private :
 	struct Node
 	{
-		int data;
+		T data;
 		Node * next;
 	};
 	Node * head;
@@ -26,20 +27,22 @@ public :
 
 	void Show()
 	{
-		Node * currentPtr = head->next;
+		Node * currentPtr = head;
 		while (currentPtr != NULL)
 		{
 			cout << currentPtr->data << endl;
 			currentPtr = currentPtr->next;
 		}
 	}
-	void PushFront(int data)
+
+	void PushFront(T data)
 	{
 		Node * newNode = new Node;
 		newNode->data = data;
 
 		if (head == nullptr && tail == nullptr)
 		{
+			newNode->next = nullptr;
 			head = newNode;
 			tail = newNode;
 		}
@@ -48,13 +51,14 @@ public :
 			newNode->next = head;
 			head = newNode;
 		}
+		size++;
 	}
 
-	void PushBack(int data)
+	void PushBack(T data)
 	{
 		Node * newNode = new Node;
 		newNode->data = data;
-		newNode = nullptr;
+		newNode->next = nullptr;
 
 		if (head == nullptr && tail == nullptr)
 		{
@@ -66,7 +70,43 @@ public :
 			tail->next = newNode;
 			tail = newNode;
 		}
+		size++;
 	}
-	
+
+	void PopFront()
+	{
+		if (head == nullptr && tail == nullptr)
+		{
+			cout << "List is Empty" << endl;
+			return;
+		}
+		if (size == 1)
+		{
+			Node* deleteNode = head;
+			head = nullptr;
+			tail = nullptr;
+			delete deleteNode;
+		}
+		else
+		{
+			Node* deleteNode = head;
+			head = deleteNode->next;
+			delete deleteNode;
+		}
+		size--;
+	}
+
+	int Size()
+	{
+		return size;
+	}
+
+	~SingleLinkedList()
+	{
+		while (size != 0)
+		{
+			PopFront();
+		}
+	}
 };
 
