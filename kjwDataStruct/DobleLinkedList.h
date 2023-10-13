@@ -36,11 +36,13 @@ public :
 			newNode->next = nullptr;
 			newNode->previous = nullptr;
 			head = newNode;
-			tail = newNode;
+			tail = newNode;d
 		}
 		else
 		{
 			newNode->next = head;
+			newNode->previous = nullptr;
+			head->previous = newNode;
 			head = newNode;
 		}
 		size++;
