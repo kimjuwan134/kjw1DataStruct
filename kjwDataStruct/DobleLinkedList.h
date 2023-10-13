@@ -41,6 +41,30 @@ public :
 		else
 		{
 			newNode->next = head;
+			newNode->previous = nullptr;
+			head->previous = newNode;
+			head = newNode;
+		}
+		size++;
+	}
+
+	void PushBack(T data)
+	{
+		Node* newNode = new Node;
+		newNode->data = data;
+
+		if (head == nullptr && tail == nullptr)
+		{
+			newNode->next = nullptr;
+			newNode->previous = nullptr;
+			head = newNode;
+			tail = newNode;
+		}
+		else
+		{
+			newNode->next = nullptr;
+			newNode->previous = nullptr;
+			head->previous = newNode;
 			head = newNode;
 		}
 		size++;
