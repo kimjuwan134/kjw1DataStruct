@@ -36,7 +36,7 @@ public :
 			newNode->next = nullptr;
 			newNode->previous = nullptr;
 			head = newNode;
-			tail = newNode;d
+			tail = newNode;
 		}
 		else
 		{
@@ -61,7 +61,7 @@ public :
 		}
 		else
 		{
-			newNode.
+			newNode->data;
 		}
 		size++;
 	}

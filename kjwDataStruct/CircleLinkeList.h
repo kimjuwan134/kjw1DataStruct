@@ -42,7 +42,7 @@ public :
 
 	void PushBack(T data)
 	{
-		Node* newNode = newNode;
+		Node* newNode = new Node;
 		newNode->data = data;
 		if (head == nullptr)
 		{
@@ -93,22 +93,29 @@ public :
 			delete deleteNode;
 			head = nullptr;
 		}
-		Node* deleteNode = head->next;
-		head->next = deleteNode->next;
-		delete deleteNode;
+			Node* deleteNode = head->next;
+			head->next = deleteNode->next;
+			delete deleteNode;
+			size--;
 	}
 
 	void Display()
 	{
 		Node* currentNode = head->next;
-		for(int i = 0; i < size; i++)
-
+		for (int i = 0; i < size; i++)
+		{
+			cout << currentNode->data << endl;
+			currentNode = currentNode->next;
+		}
 	}
 
 	~CircleLinkedList()
 	{
-		Node* deleteNode = head;
-		head = head->next;
-		delete deleteNode;
+		for (int i = 0; i < size; i++)
+		{
+			Node* deleteNode = head->next;
+			head->next = deleteNode->next;
+			delete deleteNode;
+		}
 	}
 };

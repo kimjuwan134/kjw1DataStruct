@@ -29,9 +29,6 @@
     <ClInclude Include="SingleLinkedList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DobleLinkedList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CircleLinkeList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
