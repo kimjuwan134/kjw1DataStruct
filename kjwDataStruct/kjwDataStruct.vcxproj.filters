@@ -32,5 +32,8 @@
     <ClInclude Include="CircleLinkeList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BubbleSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
