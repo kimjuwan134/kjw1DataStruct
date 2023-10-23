@@ -24,6 +24,9 @@
     <ClCompile Include="DobleLinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SingleLinkedList.h">
@@ -36,6 +39,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SelectSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InserSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="STACK.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

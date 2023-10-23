@@ -130,12 +130,15 @@
     <ClCompile Include="DobleLinkedList.cpp" />
     <ClCompile Include="kjwDataStruct.cpp" />
     <ClCompile Include="SingleLinkedList.cpp" />
+    <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BubbleSort.h" />
     <ClInclude Include="CircleLinkeList.h" />
+    <ClInclude Include="InserSort.h" />
     <ClInclude Include="SelectSort.h" />
     <ClInclude Include="SingleLinkedList.h" />
+    <ClInclude Include="STACK.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
