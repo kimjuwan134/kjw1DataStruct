@@ -129,13 +129,15 @@
   <ItemGroup>
     <ClCompile Include="DobleLinkedList.cpp" />
     <ClCompile Include="kjwDataStruct.cpp" />
+    <ClCompile Include="LinearQueue.cpp" />
     <ClCompile Include="SingleLinkedList.cpp" />
-    <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="STACK.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BubbleSort.h" />
     <ClInclude Include="CircleLinkeList.h" />
     <ClInclude Include="InserSort.h" />
+    <ClInclude Include="LinearQueue.h" />
     <ClInclude Include="SelectSort.h" />
     <ClInclude Include="SingleLinkedList.h" />
     <ClInclude Include="STACK.h" />
