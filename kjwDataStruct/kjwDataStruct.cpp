@@ -1,33 +1,23 @@
 #include <iostream>
-#include "CircleQueue.h"
+#include "VECTOR.h"
 
 using namespace std;
 
 
 int main()
 {
-#pragma region 원형 큐
+	VECTOR<int> v;
 
-	// 물리적으로는 선형 구조를 가지고 있으며, 큐의 시작점과 끝점을 연결한 큐.
+	v.PushBack(10);
 
-	CircleQueue<int> q;
+	cout << v[1];
 
-	q.Enqueue(10);
-	q.Enqueue(20);
-	q.Enqueue(30);
-	q.Dequeue();
-	q.Dequeue();
-
-	cout << q.Front() << endl;
-	cout << q.Back() << endl;
-	cout << q.Size() << endl;
-	cout << q.Empty() << endl;
-	cout << q.IsFull() << endl;
 	
-
-
-
-#pragma endregion
+	
+	
+	// 1. Size() 함수 구현
+	// 2. PopBack() 함수 구현
+	// 3. 소멸자 구현
 
 
 
