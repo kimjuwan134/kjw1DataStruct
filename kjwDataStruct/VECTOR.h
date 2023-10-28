@@ -62,4 +62,16 @@ public:
 		bufferPointer[size++] = data;
 	}
 
+	int& Size()
+	{
+		return size;
+	}
+
+	void PopBack()
+	{
+		if (size <= 0) cout << "Data is Empty";
+		bufferPointer[--size] = NULL;
+	}
+
+	~VECTOR() {}
 };
