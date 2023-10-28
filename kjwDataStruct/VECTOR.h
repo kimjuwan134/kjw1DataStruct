@@ -21,7 +21,7 @@ public:
 
 	T& operator[](const int value)
 	{
-		return bufferPointer[value - 1];
+		return bufferPointer[value];
 	}
 
 	void Resize(int newSize)
@@ -39,10 +39,11 @@ public:
 			newPointer[i] = bufferPointer[i];
 		}
 
-		if (bufferPointer != nullptr)
-		{
-			delete[]bufferPointer;
-		}
+		//if (bufferPointer != nullptr)
+		//{
+		//	delete[]bufferPointer;
+		//}
+		delete[]bufferPointer;
 
 		bufferPointer = newPointer;
 	}
@@ -73,5 +74,8 @@ public:
 		bufferPointer[--size] = NULL;
 	}
 
-	~VECTOR() {}
+	~VECTOR()
+	{
+		delete[]bufferPointer;
+	}
 };

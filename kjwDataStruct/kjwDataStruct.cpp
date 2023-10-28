@@ -12,12 +12,19 @@ int main()
 	v.PushBack(10);
 	v.PushBack(20);
 	v.PushBack(30);
+	v.PushBack(40);
+	v.PushBack(50);
+
+	v.PopBack();
+	v.PopBack();
 
 
 	for (int i = 0; i < v.Size(); i++)
 	{
 		cout << v[i] << endl;
 	}
+	
+	cout << v.Size();
 
 
 	
