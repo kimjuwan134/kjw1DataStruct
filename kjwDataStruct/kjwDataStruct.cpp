@@ -22,9 +22,55 @@ Node* CreateNode(int data, Node* left, Node* right)
 
 void PreorderTraversal(Node* root)
 {
-	cout << root->data;
-	PreorderTraversal(root->left);
-	PreorderTraversal(root->right);
+	if (root == nullptr) return;
+	else
+	{
+		cout << root->data << " ";
+		PreorderTraversal(root->left);
+		PreorderTraversal(root->right);
+	}
+}
+
+void PostorderTraversal(Node* left, Node* right, Node* root)
+{
+	if (left == nullptr) return;
+	else
+	{
+		cout << left->data << " ";
+		PreorderTraversal(left->left);
+		PreorderTraversal(left->right);
+	}
+
+	if (right == nullptr) return;
+	else
+	{
+		cout << right->data << " ";
+		PreorderTraversal(right->left);
+		PreorderTraversal(right->right);
+	}
+
+	cout << root->data << " ";
+}
+
+void InorderTraversal(Node* left, Node* root, Node* right)
+{
+	if (left == nullptr) return;
+	else
+	{
+		cout << left->data << " ";
+		PreorderTraversal(left->left);
+		PreorderTraversal(left->right);
+	}
+
+	cout << root->data << " ";
+
+	if (right == nullptr) return;
+	else
+	{
+		cout << right->data << " ";
+		PreorderTraversal(right->left);
+		PreorderTraversal(right->right);
+	}
 }
 
 // 전위 순회
@@ -58,7 +104,11 @@ int main()
 	Node* node2 = CreateNode(2, node4, node5);
 	Node* node1 = CreateNode(1, node2, node3);
 
-	
+	PreorderTraversal(node1);
+	cout << endl;
+	PostorderTraversal(node2, node3, node1);
+	cout << endl;
+	InorderTraversal(node2, node1, node3);
 
 
 
