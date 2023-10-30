@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="DobleLinkedList.cpp" />
     <ClCompile Include="kjwDataStruct.cpp" />
     <ClCompile Include="LinearQueue.cpp" />
@@ -134,6 +135,7 @@
     <ClCompile Include="STACK.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="BubbleSort.h" />
     <ClInclude Include="CircleLinkeList.h" />
     <ClInclude Include="CircleQueue.h" />

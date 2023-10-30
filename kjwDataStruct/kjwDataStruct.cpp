@@ -1,41 +1,71 @@
 #include <iostream>
-#include "VECTOR.h"
-#include <vector>
 
 using namespace std;
 
 
+struct Node
+{
+	int data;
+	Node* left;
+	Node* right;
+};
+
+Node* CreateNode(int data, Node* left, Node* right)
+{
+	Node* newNode = new Node;
+	newNode->data = data;
+	newNode->left = left;
+	newNode->right = right;
+
+	return newNode;
+}
+
+void PreorderTraversal(Node* root)
+{
+	cout << root->data;
+	PreorderTraversal(root->left);
+	PreorderTraversal(root->right);
+}
+
+// 전위 순회
+// 1. Root Node를 방문.
+// 2. 왼쪽 서브 트리 전위 순회.
+// 3. 오른쪽 서브 트리 전위 순회.
+
+// 중위 순회
+// 1. 왼쪽 서브 트리 전위 순회.
+// 2. Root Node 방문.
+// 3. 오른쪽 서브 트리 전위 순회.
+
+// 후위 순회
+// 1. 왼쪽 서브 트리 전위 순회.
+// 2. 오른쪽 서브 트리 전위 순회.
+// 3. Root Node 방문.
+
+
 int main()
 {
-	VECTOR<int> v;
+#pragma region 트리
 
-	v.PushBack(10);
-	v.PushBack(20);
-	v.PushBack(30);
-	v.PushBack(40);
-	v.PushBack(50);
+	// 그래프의 일종으로 정점과 간선을 이용하여 
+	// 데이터의 배치 형태를 추상화한 자료구조.
 
-	v.PopBack();
-	v.PopBack();
-
-
-	for (int i = 0; i < v.Size(); i++)
-	{
-		cout << v[i] << endl;
-	}
-	
-	cout << v.Size();
-
+	Node* node7 = CreateNode(7, nullptr, nullptr);
+	Node* node6 = CreateNode(6, nullptr, nullptr);
+	Node* node5 = CreateNode(5, nullptr, nullptr);
+	Node* node4 = CreateNode(4, nullptr, nullptr);
+	Node* node3 = CreateNode(3, node6, node7);
+	Node* node2 = CreateNode(2, node4, node5);
+	Node* node1 = CreateNode(1, node2, node3);
 
 	
-	
-	
-	// 1. Size() 함수 구현
-	// 2. PopBack() 함수 구현
-	// 3. 소멸자 구현
 
 
 
+
+
+
+#pragma endregion
 
 
 

@@ -19,7 +19,7 @@ public:
 		bufferPointer = nullptr;
 	}
 
-	T& operator[](const int value)
+	T& operator[](const int& value)
 	{
 		return bufferPointer[value];
 	}
@@ -70,12 +70,21 @@ public:
 
 	void PopBack()
 	{
-		if (size <= 0) cout << "Data is Empty";
-		bufferPointer[--size] = NULL;
+		if (size <= 0) cout << "Data is Empty" << endl;
+		else bufferPointer[--size] = NULL;
+	}
+
+	void Reserve(int newSize)
+	{
+		if (newSize < capacity)
+		{
+			return;
+		}
+		Resize(newSize);
 	}
 
 	~VECTOR()
 	{
-		delete[]bufferPointer;
+		delete [] bufferPointer;
 	}
 };
