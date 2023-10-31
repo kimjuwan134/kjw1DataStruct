@@ -127,7 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="DobleLinkedList.cpp" />
     <ClCompile Include="kjwDataStruct.cpp" />
     <ClCompile Include="LinearQueue.cpp" />
@@ -141,6 +140,7 @@
     <ClInclude Include="CircleLinkeList.h" />
     <ClInclude Include="CircleQueue.h" />
     <ClInclude Include="CountSort.h" />
+    <ClInclude Include="DobleLinkedList.h" />
     <ClInclude Include="InserSort.h" />
     <ClInclude Include="LinearQueue.h" />
     <ClInclude Include="SelectSort.h" />

@@ -1,2 +1,2 @@
-﻿kjwDataStruct.obj : error LNK2005: main already defined in BinaryTree.obj
-C:\Users\Administrator\Desktop\kjw1DataStruct\kjwDataStruct\x64\Debug\kjwDataStruct.exe : fatal error LNK1169: one or more multiply defined symbols found
+﻿  kjwDataStruct.cpp
+  kjwDataStruct.vcxproj -> C:\Users\Admin\Desktop\kjw1DataStruct\kjwDataStruct\x64\Debug\kjwDataStruct.exe
