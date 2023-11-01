@@ -56,6 +56,16 @@ public :
 		}
 	}
 
+	void Inorder(Node* root)
+	{
+		if (root != nullptr)
+		{
+			Inorder(root->left);
+			cout << root->data << " ";
+			Inorder(root->right);
+		}
+	}
+
 
 
 };
