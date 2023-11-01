@@ -5,15 +5,15 @@ int main()
 {
 	BinarySearchTree<int> bst;
 
-	bst.Insert(10, bst.GetRoot());
-	bst.Insert(20, bst.GetRoot());
-	bst.Insert(30, bst.GetRoot());
-	bst.Insert(40, bst.GetRoot());
-	bst.Insert(50, bst.GetRoot());
+	bst.rootNode = bst.Insert(10, bst.rootNode);
+	bst.Insert(20, bst.rootNode);
+	bst.Insert(5, bst.rootNode);
+	bst.Insert(5, bst.rootNode);
 
-	bst.Inorder(bst.GetRoot());
-	bst.Insert(50, bst.GetRoot());
-	bst.Insert(50, bst.GetRoot());
+
+	cout << bst.FindMax(bst.rootNode) << endl;
+	cout << bst.FindMin(bst.rootNode) << endl;
+
 	bst.Inorder(bst.GetRoot());
 
 

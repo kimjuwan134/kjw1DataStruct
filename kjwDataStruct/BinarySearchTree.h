@@ -14,16 +14,17 @@ using namespace std;
 template <typename T>
 class BinarySearchTree
 {
-private :
+private:
 	struct Node
 	{
 		T data;
 		Node* left;
 		Node* right;
 	};
+
+public:
 	Node* rootNode;
 
-public :
 	BinarySearchTree()
 	{
 		rootNode = nullptr;
@@ -33,27 +34,31 @@ public :
 	{
 		return rootNode;
 	}
-	                      
-	void Insert(T data, Node* root)
+
+	Node* Insert(T data, Node* root)
 	{
-		if (root == nullptr)
+		if (Find(root, data) == true)
 		{
-			root = new Node;
-			root->data = data;
-			root->left = nullptr;
-			root->right = nullptr;
+			cout << "Duplicate Key" << endl;
+			return root;
 		}
-		else
-		{
-			if (root->data > data)
+			if (root == nullptr)
 			{
-				Insert(data, root->left);
+				root = new Node;
+				root->data = data;
+				root->left = nullptr;
+				root->right = nullptr;
+			}
+		//else if root의 data보다 작다면?
+			else if (root->data > data)
+			{
+				root->left = Insert(data, root->left);
 			}
 			else if (root->data < data)
 			{
-				Insert(data, root->right);
+				root->right = Insert(data, root->right);
 			}
-		}
+		return root;
 	}
 
 	void Inorder(Node* root)
@@ -66,6 +71,67 @@ public :
 		}
 	}
 
+	bool Find(Node * root, T data)
+	{
+		if (root == nullptr)
+		{
+			return false;
+		}
+
+		if (root->data == data)
+		{
+			return true;
+		}
+		else if (root->data > data)
+		{
+			return Find(root->left, data);
+		}
+		else if (root->data < data)
+		{
+			return Find(root->right, data);
+		}
+	}
+
+	T& FindMax(Node* root) const
+	{
+		if (root == nullptr)
+		{
+			cout << "Binary Search Tree is Empty" << endl;
+			exit(1);
+		}
+		
+		if (root->right == nullptr)
+		{
+			return root->data;
+		}
+		else
+		{
+			return FindMax(root->right);
+		}
+	}
+
+	T& FindMin(Node* root) const
+	{
+		if (root == nullptr)
+		{
+			cout << "Binary Search Tree is Empty" << endl;
+			exit(1);
+		}
+
+		if (root->left == nullptr)
+		{
+			return root->data;
+		}
+		else
+		{
+			return FindMin(root->left);
+		}
+	}
+
+	Node* Delete(T data)
+	{
+
+	}
 
 
 };
