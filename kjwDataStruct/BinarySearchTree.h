@@ -128,9 +128,62 @@ public:
 		}
 	}
 
-	Node* Delete(T data)
+	Node* MinValueNode(Node* root)
 	{
+		Node* currentNode = root;
 
+		while (currentNode && currentNode->left != nullptr)
+		{
+			currentNode = currentNode->left;
+		}
+
+		return currentNode;
+	}
+
+	Node* RemoveNode(Node* root, T data)
+	{
+		if (root == nullptr)
+		{
+			cout << "Not key Found" << endl;
+			return root;
+		}
+
+		if (root->data > data)
+		{
+			root->left = RemoveNode(root->left, data);
+		}
+		else if (root->data < data)
+		{
+			root->right = RemoveNode(root->right, data);
+		}
+		else
+		{
+			Node* tempNode;
+
+			if (root->left == nullptr)
+			{
+				tempNode = root->right;
+				delete root;
+				return tempNode;
+			}
+			else if (root->right == nullptr)
+			{
+				tempNode = root->left;
+				delete root;
+				return tempNode;
+			}
+
+			// 자식 노드가 두 개 있을 때
+			tempNode = MinValueNode(root->right);
+
+			// 삭제할 NODE의 데이터 넣기.
+			root->data = tempNode->data;
+
+			// 노드 삭제.
+			root->right = RemoveNode(root->right, tempNode->data);
+		}
+
+		return root;
 	}
 
 
