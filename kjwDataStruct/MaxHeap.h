@@ -60,18 +60,49 @@ public :
 		}
 	}
 
-	void Delete(T data)
+	T & Delete()
 	{
+		// Heap이 비어있다면 프로그램 종료.
 		if (size <= 0)
 		{
 			cout << "Data is Empty" << endl;
-			return;
+			exit(1);
 		}
 
-		else if (size > 1 && size < SIZE)
+		// 2. 임시 변수 -> 가장 큰 값을 보관하는 역할
+		T result = buffer[1];
+
+		// 3. size로 가리키는 배열의 값을 첫 번째 원소에 넣음.
+		buffer[1] = buffer[size];
+
+		// 4. size로 가리키는 배열의 값을 초기화.
+		buffer[size] = NULL;
+
+		// 5. size의 값 감소.
+		size--;
+
+		int parent = 1;
+
+		while (parent * 2 <= size)
 		{
-			swap(buffer[1], buffer[size]);
+			int child = parent * 2;
+
+			// 오른쪽 자식의 노드가 클 때
+			if (buffer[child] < buffer[child + 1])
+			{
+				child++;
+			}
+
+			// 부모 노드의 Key 값이 자식 노드의 Key 값보다 크다면 반복 종료.
+			if (buffer[child] < buffer[parent])
+			{
+				break;
+			}
+
+			swap(buffer[parent], buffer[child]);
+			parent = child;
 		}
+		return result;
 	}
 	
 };
