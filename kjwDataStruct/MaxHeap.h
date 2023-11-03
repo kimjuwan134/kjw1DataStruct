@@ -68,7 +68,10 @@ public :
 			return;
 		}
 
-		else if
+		else if (size > 1 && size < SIZE)
+		{
+			swap(buffer[1], buffer[size]);
+		}
 	}
 	
 };

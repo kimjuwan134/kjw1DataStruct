@@ -13,7 +13,7 @@ int main()
 	heap.Insert(30);
 	heap.Insert(40);
 	heap.Insert(50);
-
+	
 	heap.Display();
 
 
