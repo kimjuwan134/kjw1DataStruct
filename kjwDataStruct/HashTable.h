@@ -3,6 +3,8 @@
 
 using namespace std;
 
+#define SIZE 5
+
 
 #pragma region 해시 테이블
 
@@ -24,6 +26,77 @@ using namespace std;
 
 // 이중 해싱 : 해시 값을 한번 더 해시 함수에 넣어 다른 함수를 도출하는 방식.
 
-
-
 #pragma endregion
+
+
+template<typename K, typename V>
+class HashTable
+{
+private :
+	struct Node
+	{
+		K key;
+		V value;
+		Node* next;
+	};
+
+	struct Bucket
+	{
+		int count;
+		Node* head;
+	};
+
+	Bucket bucket[SIZE];
+
+public :
+	HashTable()
+	{
+		for (int i = 0; i < SIZE; i++)
+		{
+			bucket[i].count = 0;
+			bucket[i].head = nullptr;
+		}
+	}
+
+	int HashFunction(K key)
+	{
+		int temp = 0;
+
+		for (const char & element : key)
+		{
+			temp += (int)element;
+		}
+
+		int hashIndex = temp % SIZE;
+		return hashIndex;
+	}
+
+	Node * CreateNode(K key, V value)
+	{
+		Node* newNode = new Node;
+		newNode->key = key;
+		newNode->value = value;
+		newNode->next = nullptr;
+
+		return newNode;
+	}
+
+	void Insert(K key, V value)
+	{
+		int hashIndex = HashFunction(key);
+
+		Node* newNode = CreateNode(key, value);
+
+		if (bucket[hashIndex].count == 0)
+		{
+			bucket[hashIndex].head = newNode;
+			bucket[hashIndex].count++;
+		}
+		else
+		{
+			newNode->next = bucket[hashIndex].head;
+			bucket[hashIndex].head = newNode;
+			bucket[hashIndex].count++;
+		}
+	}
+};

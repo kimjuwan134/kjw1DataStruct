@@ -12,7 +12,7 @@ private :
 	T data;
 	T buffer[SIZE] = { 0, };
 	int size;
-
+	 
 public :
 	MaxHeap()
 	{
