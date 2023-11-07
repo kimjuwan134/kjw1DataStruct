@@ -1,2 +1,6 @@
 ﻿  kjwDataStruct.cpp
+C:\Users\Administrator\Desktop\kjw1DataStruct\kjwDataStruct\HashTable.h(190,1): warning C4154: deletion of an array expression; conversion to pointer supplied
+C:\Users\Administrator\Desktop\kjw1DataStruct\kjwDataStruct\HashTable.h(188,3): message : while compiling class template member function 'HashTable<std::string,int>::~HashTable(void)'
+C:\Users\Administrator\Desktop\kjw1DataStruct\kjwDataStruct\kjwDataStruct.cpp(9,25): message : see the first reference to 'HashTable<std::string,int>::~HashTable' in 'main'
+C:\Users\Administrator\Desktop\kjw1DataStruct\kjwDataStruct\kjwDataStruct.cpp(9,25): message : see reference to class template instantiation 'HashTable<std::string,int>' being compiled
   kjwDataStruct.vcxproj -> C:\Users\Administrator\Desktop\kjw1DataStruct\kjwDataStruct\x64\Debug\kjwDataStruct.exe
